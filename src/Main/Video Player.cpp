@@ -2,8 +2,9 @@
 #include "SFML/Graphics.hpp"
 #include <iostream>
 #include "SFML/System/Vector2.hpp"
-
 #include "SFML/Audio/Music.hpp"
+#include "Audioplayer.h"
+
 using namespace std;
 int dosum(int a = 3, int b = 3) {
     return a + b;
@@ -18,7 +19,18 @@ int main()
         cerr << "music not opened";
     }
     file.play();
-    
+    AudioPlayer audioplayer;
+    while (audioplayer.getWindow()->isOpen()) {
+        sf::Event event;
+        
+        while (audioplayer.getWindow()->pollEvent(event)) {
+            if (event.type == sf::Event::Closed) {
+                std::cerr << "window closed";
+                audioplayer.getWindow()->close();
+            }
+        }
+    }
+    /*
     sf::RenderWindow window(sf::VideoMode(1200, 1200), "SFML works!");
     sf::CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Green);
@@ -43,7 +55,7 @@ int main()
         window.draw(shape);
         window.display();
     }
-
+    */
     return 0;
 }
 
