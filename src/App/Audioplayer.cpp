@@ -26,3 +26,7 @@ void AudioPlayer::closeApp() {
 	window->clear();
 	isOpened = false;
 }
+
+std::vector<IClickable>* AudioPlayer::getClicables() {
+	return &clickables;
+}

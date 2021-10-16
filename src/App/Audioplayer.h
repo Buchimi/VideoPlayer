@@ -1,29 +1,32 @@
 #ifndef AUDIOPLAYER_H
 #define AUDIOPLAYER_H
-#include "SFML/Graphics//RenderWindow.hpp"
-
+#include "RenderWindow.hpp"
+#include "IClickable.h"
+#include <vector>
 class AudioPlayer
 {
 public:
 	AudioPlayer();
 	~AudioPlayer();
 
-	void createWindow();
-	
 	//get window
 	sf::RenderWindow* getWindow();
 
+	void createWindow();
 	//closes app
 	void closeApp();
 	
 	bool isOpened = true;
+
+	std::vector<IClickable>* getClicables();
 private:
 	// Window pointer
 	sf::RenderWindow* window;
+	
 	// icons and buttons
 	// music array/playlist
 	// current music playing
-
+	std::vector<IClickable> clickables;
 };
 
 

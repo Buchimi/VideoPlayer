@@ -92,7 +92,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\sting\source\repos\Video Player\src\App;C:\Users\sting\OneDrive\Documents\libs\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\sting\source\repos\Video Player\src\App;C:\Users\sting\OneDrive\Documents\libs\SFML-2.5.1\include\SFML\Audio;C:\Users\sting\OneDrive\Documents\libs\SFML-2.5.1\include\SFML\Graphics;C:\Users\sting\OneDrive\Documents\libs\SFML-2.5.1\include\SFML\Network;C:\Users\sting\OneDrive\Documents\libs\SFML-2.5.1\include\SFML\System;C:\Users\sting\OneDrive\Documents\libs\SFML-2.5.1\include\SFML\Window;C:\Users\sting\OneDrive\Documents\libs\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -109,7 +109,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\sting\source\repos\Video Player\src\App;C:\Users\sting\OneDrive\Documents\libs\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\sting\source\repos\Video Player\src\App;C:\Users\sting\OneDrive\Documents\libs\SFML-2.5.1\include\SFML\Audio;C:\Users\sting\OneDrive\Documents\libs\SFML-2.5.1\include\SFML\Graphics;C:\Users\sting\OneDrive\Documents\libs\SFML-2.5.1\include\SFML\Network;C:\Users\sting\OneDrive\Documents\libs\SFML-2.5.1\include\SFML\System;C:\Users\sting\OneDrive\Documents\libs\SFML-2.5.1\include\SFML\Window;C:\Users\sting\OneDrive\Documents\libs\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -126,7 +126,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\sting\source\repos\Video Player\src\App;C:\Users\sting\OneDrive\Documents\libs\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\sting\source\repos\Video Player\src\App;C:\Users\sting\OneDrive\Documents\libs\SFML-2.5.1\include\SFML\Audio;C:\Users\sting\OneDrive\Documents\libs\SFML-2.5.1\include\SFML\Graphics;C:\Users\sting\OneDrive\Documents\libs\SFML-2.5.1\include\SFML\Network;C:\Users\sting\OneDrive\Documents\libs\SFML-2.5.1\include\SFML\System;C:\Users\sting\OneDrive\Documents\libs\SFML-2.5.1\include\SFML\Window;C:\Users\sting\OneDrive\Documents\libs\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -143,7 +143,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\sting\source\repos\Video Player\src\App;C:\Users\sting\OneDrive\Documents\libs\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\sting\source\repos\Video Player\src\App;C:\Users\sting\OneDrive\Documents\libs\SFML-2.5.1\include\SFML\Audio;C:\Users\sting\OneDrive\Documents\libs\SFML-2.5.1\include\SFML\Graphics;C:\Users\sting\OneDrive\Documents\libs\SFML-2.5.1\include\SFML\Network;C:\Users\sting\OneDrive\Documents\libs\SFML-2.5.1\include\SFML\System;C:\Users\sting\OneDrive\Documents\libs\SFML-2.5.1\include\SFML\Window;C:\Users\sting\OneDrive\Documents\libs\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -156,10 +156,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\App\Audioplayer.cpp" />
+    <ClCompile Include="src\App\Button.cpp" />
     <ClCompile Include="src\Main\Video Player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\App\Audioplayer.h" />
+    <ClInclude Include="src\App\Button.h" />
+    <ClInclude Include="src\App\IClickable.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

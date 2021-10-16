@@ -1,15 +1,11 @@
 
 #include "SFML/Graphics.hpp"
 #include <iostream>
-#include "SFML/System/Vector2.hpp"
 #include "SFML/Audio/Music.hpp"
 #include "Audioplayer.h"
-
+#include "Mouse.hpp"
+#include "Vector2.hpp"
 using namespace std;
-int dosum(int a = 3, int b = 3) {
-    return a + b;
-}
-
 
 int main()
 {
@@ -27,7 +23,17 @@ int main()
             if (event.type == sf::Event::Closed) {
                 std::cerr << "window closed";
                 audioplayer.getWindow()->close();
-            }
+            }/*
+            if (event.type == sf::Event::MouseButtonPressed) 
+            {
+                sf::Vector2i mousepos = sf::Mouse::getPosition();
+                for (int i = 0; i < audioplayer.getClicables()->size(); ++i) {
+                    IClickable* objectref = &(audioplayer.getClicables()-.at(i));
+                    if (objectref->rectangle.contains(mousepos)) {//objectref->rectangle.contain(sf::Mouse.getPosition())
+
+                    }
+                }
+            }*/
         }
     }
     /*
