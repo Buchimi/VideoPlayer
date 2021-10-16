@@ -14,8 +14,8 @@ public:
 	void checkForClicks(sf::Event event) {
 
 	}
-	//Button();
-	//~Button();
+	Button();
+	~Button();
 private:
 	//icon/button texture
 	Sprite icon;

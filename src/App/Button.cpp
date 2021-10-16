@@ -1,9 +1,9 @@
 #include "Button.h"
-/*
-template<> Button<int>::Button() {
+template<typename T>
+Button<T>::Button() {
 
 }
-template<> Button<int>::~Button() {
+template<typename T>
+Button<T>::~Button() {
 
 }
-*/
