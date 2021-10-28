@@ -7,6 +7,12 @@
 #include "Vector2.hpp"
 using namespace std;
 
+
+void manageClicks();
+
+
+
+
 int main()
 {
     sf::Music file; 
@@ -15,7 +21,20 @@ int main()
         cerr << "music not opened";
     }
     file.play();
+    //makes an audio player
     AudioPlayer audioplayer;
+    
+    //makes a button and loads it with texture
+    Button* button = new Button(sf::Vector2f(50.0f, 50.0f), sf::Vector2f(500.0f, 500.0f));
+    audioplayer.addButton(button);//button is a pointer
+    sf::Image image;
+    sf::Texture texture;
+    image.loadFromFile("C:/Users/sting/OneDrive/Documents/racist.png");
+    texture.loadFromImage(image, sf::Rect<int>(50,50,50,50));
+
+    button->setTexture(&texture, false);
+
+    //app loop
     while (audioplayer.getWindow()->isOpen()) {
         sf::Event event;
         
@@ -23,19 +42,33 @@ int main()
             if (event.type == sf::Event::Closed) {
                 std::cerr << "window closed";
                 audioplayer.getWindow()->close();
-            }/*
+            }
+            //if we got a click
             if (event.type == sf::Event::MouseButtonPressed) 
             {
-                sf::Vector2i mousepos = sf::Mouse::getPosition();
-                for (int i = 0; i < audioplayer.getClicables()->size(); ++i) {
-                    IClickable* objectref = &(audioplayer.getClicables()-.at(i));
-                    if (objectref->rectangle.contains(mousepos)) {//objectref->rectangle.contain(sf::Mouse.getPosition())
-
+                sf::Vector2i mousepos = sf::Mouse::getPosition((*audioplayer.getWindow()));
+                std::cout << "Clicked" << endl;
+                for (int i = 0; i < audioplayer.getButtons()->size(); ++i) {
+                    //IClickable* objectref = &(audioplayer.getClicables()->at(i));
+                    auto& objectref = audioplayer.getButtons()->at(i);
+                    cout << "x: "<< mousepos.x << ", y: " << mousepos.y << endl;
+                    cout << "rectangleleft: " << objectref.rectangle.left << " to " << objectref.rectangle.width;
+                        //+ objectref->rectangle.left;
+                    if (objectref.rectangle.contains(mousepos)) {//objectref->rectangle.contain(sf::Mouse.getPosition())
+                        std::cout << mousepos.x << ", " << mousepos.y << endl;
+                        objectref.clicked();
                     }
                 }
-            }*/
+            }
         }
+        //cleanup code
+        audioplayer.getWindow()->clear();
+        audioplayer.getWindow()->draw(*button);
+        audioplayer.getWindow()->display();
     }
+
+
+    
     /*
     sf::RenderWindow window(sf::VideoMode(1200, 1200), "SFML works!");
     sf::CircleShape shape(100.f);
@@ -65,3 +98,7 @@ int main()
     return 0;
 }
 
+void manageClicks()
+{
+    
+}

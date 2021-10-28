@@ -3,6 +3,7 @@
 #include "RenderWindow.hpp"
 #include "IClickable.h"
 #include <vector>
+#include "Button.h"
 class AudioPlayer
 {
 public:
@@ -18,7 +19,9 @@ public:
 	
 	bool isOpened = true;
 
-	std::vector<IClickable>* getClicables();
+	std::vector<Button>* getButtons();
+	void addButton(Button* clickableDeezNutz);
+	void createButton();
 private:
 	// Window pointer
 	sf::RenderWindow* window;
@@ -26,7 +29,7 @@ private:
 	// icons and buttons
 	// music array/playlist
 	// current music playing
-	std::vector<IClickable> clickables;
+	std::vector<Button> Buttons;
 };
 
 

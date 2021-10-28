@@ -27,6 +27,15 @@ void AudioPlayer::closeApp() {
 	isOpened = false;
 }
 
-std::vector<IClickable>* AudioPlayer::getClicables() {
-	return &clickables;
+std::vector<Button>* AudioPlayer::getButtons() {
+	return &Buttons;
+}
+
+void AudioPlayer::createButton() {
+	Button* newButton = new Button(sf::Vector2f(5.0f, 5.0f), sf::Vector2f(5.0f, 5.0f));
+
+}
+
+void AudioPlayer::addButton(Button* clickableDeezNutz) {
+	Buttons.push_back(*clickableDeezNutz);
 }
