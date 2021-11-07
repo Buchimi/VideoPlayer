@@ -1,9 +1,13 @@
-#ifndef AUDIOPLAYER_H
-#define AUDIOPLAYER_H
+#pragma once
+
+
+#include "Button.h"
 #include "RenderWindow.hpp"
 #include "IClickable.h"
 #include <vector>
-#include "Button.h"
+
+#include "SFML/Audio/Music.hpp"
+
 class AudioPlayer
 {
 public:
@@ -16,23 +20,23 @@ public:
 	void createWindow();
 	//closes app
 	void closeApp();
-	
+	Button but;
 	bool isOpened = true;
-
 	std::vector<Button>* getButtons();
+	
 	void addButton(Button* clickableDeezNutz);
 	void createButton();
+	
+	void draw();
+
+	void togglePause();
 private:
 	// Window pointer
 	sf::RenderWindow* window;
-	
 	// icons and buttons
-	// music array/playlist
-	// current music playing
 	std::vector<Button> Buttons;
+	bool playing;
+	// current music playing
+	sf::Music file;
+	// music array/playlist
 };
-
-
-
-
-#endif // !AUDIOPLAYER_H

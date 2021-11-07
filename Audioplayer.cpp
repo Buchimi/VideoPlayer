@@ -1,10 +1,16 @@
-#include "Audioplayer.h"
+#include "AudioPlayer.h"
+
 #include <iostream>
 
 AudioPlayer::AudioPlayer()
 {
 	std::cout << "Hello" << std::endl;
 	createWindow();
+	if (!file.openFromFile("C:/Users/sting/Downloads/Nightcore - Replay.wav")) {
+		std::cerr << "music not opened";
+	}
+	file.play();
+	playing = true;
 }
 
 AudioPlayer::~AudioPlayer()
@@ -27,6 +33,20 @@ void AudioPlayer::closeApp() {
 	isOpened = false;
 }
 
+
+void AudioPlayer::togglePause() {
+	if (playing) 
+	{
+		file.pause();
+		playing = false;
+	}
+	else {
+
+		file.play();
+		playing = true;
+	}
+}
+
 std::vector<Button>* AudioPlayer::getButtons() {
 	return &Buttons;
 }
@@ -38,4 +58,10 @@ void AudioPlayer::createButton() {
 
 void AudioPlayer::addButton(Button* clickableDeezNutz) {
 	Buttons.push_back(*clickableDeezNutz);
+}
+
+void AudioPlayer::draw() {
+	for (auto& obj : *getButtons() ) {
+		getWindow()->draw(obj);
+	}
 }

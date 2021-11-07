@@ -155,12 +155,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\App\Audioplayer.cpp" />
+    <ClCompile Include="Audioplayer.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="src\App\Button.cpp" />
-    <ClCompile Include="src\Main\Video Player.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\App\Audioplayer.h" />
+    <ClInclude Include="Audioplayer.h" />
     <ClInclude Include="src\App\Button.h" />
     <ClInclude Include="src\App\IClickable.h" />
   </ItemGroup>
